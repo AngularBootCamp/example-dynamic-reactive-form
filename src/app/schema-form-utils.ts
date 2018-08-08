@@ -1,4 +1,4 @@
-import { Validators, ValidatorFn } from '@angular/forms';
+import { ValidatorFn, Validators } from '@angular/forms';
 
 export interface IFieldDef {
     fieldname: string;

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { DynamicFormComponent }  from './dynamic-form';
+import { DynamicFormComponent } from './dynamic-form';
 
 @NgModule({
   declarations: [DynamicFormComponent],
