@@ -16,7 +16,7 @@ export class SchemaFormUtils {
   // Given a schema, return an array of control configurations suitable
   // for use with the FormBuilder group() method.
 
-  static createControlsConfigFromSchema(schema: IFieldDef[]): { [key: string]: any } {
+  static createControlsConfigFromSchema(schema: IFieldDef[]): Record<string, any> {
 
     let allControlConfigs: any = {};
 

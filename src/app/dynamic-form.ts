@@ -12,7 +12,7 @@ import { SchemaFormUtils } from './schema-form-utils';
 export class DynamicFormComponent {
   dynamicFormGroup: FormGroup;
   schema = exampleSchema; // could load from an external source
-  controls: { [key: string]: AbstractControl; };
+  controls: Record<string, AbstractControl>;
 
   constructor(fb: FormBuilder) {
 
