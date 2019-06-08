@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup
+} from '@angular/forms';
 
 import { exampleSchema } from './example-schema';
 import { SchemaFormUtils } from './schema-form-utils';
@@ -15,7 +19,6 @@ export class DynamicFormComponent {
   controls: Record<string, AbstractControl>;
 
   constructor(fb: FormBuilder) {
-
     this.dynamicFormGroup = fb.group(
       SchemaFormUtils.createControlsConfigFromSchema(this.schema)
     );

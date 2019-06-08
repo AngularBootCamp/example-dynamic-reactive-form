@@ -1,29 +1,28 @@
 import { ValidatorFn, Validators } from '@angular/forms';
 
 export interface IFieldDef {
-    fieldname: string;
-    fieldlabel: string;
-    fieldtype: string;
-    mandatory?: boolean;
-    minimumLength?: number;
-    maximumLength?: number;
-    matchesPattern?: string;
-    defaultValue?: any;
+  fieldname: string;
+  fieldlabel: string;
+  fieldtype: string;
+  mandatory?: boolean;
+  minimumLength?: number;
+  maximumLength?: number;
+  matchesPattern?: string;
+  defaultValue?: any;
 }
 
 export class SchemaFormUtils {
-
   // Given a schema, return an array of control configurations suitable
   // for use with the FormBuilder group() method.
 
-  static createControlsConfigFromSchema(schema: IFieldDef[]): Record<string, any> {
-
-    let allControlConfigs: any = {};
+  static createControlsConfigFromSchema(
+    schema: IFieldDef[]
+  ): Record<string, any> {
+    const allControlConfigs: any = {};
 
     schema.forEach((fieldinfo: any) => {
-
-      let singleControlConfig: any[] = [];
-      let singleControlValidators: ValidatorFn[] = [];
+      const singleControlConfig: any[] = [];
+      const singleControlValidators: ValidatorFn[] = [];
 
       singleControlConfig[0] = fieldinfo.defaultValue || '';
 
@@ -61,5 +60,4 @@ export class SchemaFormUtils {
 
     return allControlConfigs;
   }
-
 }

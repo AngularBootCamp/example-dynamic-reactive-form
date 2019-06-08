@@ -9,4 +9,4 @@ import { DynamicFormComponent } from './dynamic-form';
   imports: [BrowserModule, ReactiveFormsModule],
   bootstrap: [DynamicFormComponent]
 })
-export class AppModule { }
+export class AppModule {}

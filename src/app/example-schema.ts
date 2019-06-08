@@ -1,7 +1,6 @@
 import { IFieldDef } from './schema-form-utils';
 
 export const exampleSchema: IFieldDef[] = [
-
   {
     fieldname: 'firstName',
     fieldlabel: 'First Name',
