@@ -38,7 +38,7 @@
     >
       <!-- Control is valid, so show the green checkmark. -->
       <div *ngIf="controls[ fieldinfo.fieldname ].valid">
-        <i class="tiny material-icons green-text">done</i>
+        <span class="tiny material-icons green-text">done</span>
       </div>
 
       <!-- Control is invalid, so show the error icon and any errors. -->
@@ -46,7 +46,7 @@
         *ngIf="!controls[ fieldinfo.fieldname ].valid"
         class="red-text valign-wrapper"
       >
-        <i class="tiny material-icons">error</i> &nbsp;
+        <span class="tiny material-icons">error</span> &nbsp;
 
         <span
           *ngIf="controls[ fieldinfo.fieldname ].hasError('required')"
