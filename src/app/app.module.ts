@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { DynamicFormComponent } from './dynamic-form';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [DynamicFormComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, ReactiveFormsModule],
-  bootstrap: [DynamicFormComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -10,10 +10,9 @@ import { SchemaFormUtils } from './schema-form-utils';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './dynamic-form.html',
-  styleUrls: ['./dynamic-form.css']
+  templateUrl: './app.component.html'
 })
-export class DynamicFormComponent {
+export class AppComponent {
   dynamicFormGroup: FormGroup;
   schema = exampleSchema; // could load from an external source
   controls: Record<string, AbstractControl>;
