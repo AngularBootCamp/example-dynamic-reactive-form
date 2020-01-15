@@ -178,3 +178,7 @@ a.btn-floating {
   font-size: 1.3rem;
   line-height: inherit;
 }
+.error-message,
+.mandatory-marker {
+  color: red;
+}
