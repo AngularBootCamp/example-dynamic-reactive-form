@@ -49,7 +49,7 @@
           >
             {{ fieldinfo.fieldlabel }} must be at least
             {{
-              controls[fieldinfo.fieldname].errors.minlength
+              controls[fieldinfo.fieldname].errors?.['minlength']
                 .requiredLength
             }}
             characters long.
@@ -62,7 +62,7 @@
           >
             {{ fieldinfo.fieldlabel }} cannot be more than
             {{
-              controls[fieldinfo.fieldname].errors.maxlength
+              controls[fieldinfo.fieldname].errors?.['maxlength']
                 .requiredLength
             }}
             characters long.
