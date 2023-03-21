@@ -13,7 +13,7 @@ import { SchemaFormUtils } from './schema-form-utils';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  dynamicFormGroup: FormGroup;
+  dynamicFormGroup: FormGroup<any>;
   schema = exampleSchema; // could load from an external source
   controls: Record<string, AbstractControl>;
 
