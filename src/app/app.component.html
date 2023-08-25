@@ -4,8 +4,8 @@
   <form [formGroup]="dynamicFormGroup" (ngSubmit)="onSubmit()">
     <!-- Show each field defined in the schema. -->
     <div *ngFor="let fieldinfo of schema">
-      <label [for]="fieldinfo.fieldname">
-        {{ fieldinfo.fieldlabel }}
+      <label [for]="fieldinfo.fieldName">
+        {{ fieldinfo.fieldLabel }}
 
         <!-- Add a marker for mandatory fields. -->
         <span class="mandatory-marker" *ngIf="fieldinfo.mandatory">
@@ -15,10 +15,10 @@
 
       <!-- Generate the appropriate type of input control. -->
       <input
-        [type]="fieldinfo.fieldtype"
-        [name]="fieldinfo.fieldname"
-        [id]="fieldinfo.fieldname"
-        [formControlName]="fieldinfo.fieldname"
+        [type]="fieldinfo.fieldType"
+        [name]="fieldinfo.fieldName"
+        [id]="fieldinfo.fieldName"
+        [formControlName]="fieldinfo.fieldName"
       />
 
       <!--
@@ -28,42 +28,42 @@
       <div
         class="error-message"
         *ngIf="
-          controls[fieldinfo.fieldname].touched &&
-          controls[fieldinfo.fieldname].invalid
+          controls[fieldinfo.fieldName].touched &&
+          controls[fieldinfo.fieldName].invalid
         "
       >
         <span
-          *ngIf="controls[fieldinfo.fieldname].hasError('required')"
+          *ngIf="controls[fieldinfo.fieldName].hasError('required')"
         >
-          {{ fieldinfo.fieldlabel }} is required.
+          {{ fieldinfo.fieldLabel }} is required.
         </span>
 
         <span
-          *ngIf="controls[fieldinfo.fieldname].hasError('minlength')"
+          *ngIf="controls[fieldinfo.fieldName].hasError('minlength')"
         >
-          {{ fieldinfo.fieldlabel }} must be at least
+          {{ fieldinfo.fieldLabel }} must be at least
           {{
-            controls[fieldinfo.fieldname].errors?.['minlength']
+            controls[fieldinfo.fieldName].errors?.['minlength']
               .requiredLength
           }}
           characters long.
         </span>
 
         <span
-          *ngIf="controls[fieldinfo.fieldname].hasError('maxlength')"
+          *ngIf="controls[fieldinfo.fieldName].hasError('maxlength')"
         >
-          {{ fieldinfo.fieldlabel }} cannot be more than
+          {{ fieldinfo.fieldLabel }} cannot be more than
           {{
-            controls[fieldinfo.fieldname].errors?.['maxlength']
+            controls[fieldinfo.fieldName].errors?.['maxlength']
               .requiredLength
           }}
           characters long.
         </span>
 
         <span
-          *ngIf="controls[fieldinfo.fieldname].hasError('pattern')"
+          *ngIf="controls[fieldinfo.fieldName].hasError('pattern')"
         >
-          {{ fieldinfo.fieldlabel }} is incorrect.
+          {{ fieldinfo.fieldLabel }} is incorrect.
         </span>
         <!-- end error messages -->
       </div>

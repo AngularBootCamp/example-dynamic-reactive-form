@@ -1,30 +1,32 @@
 import { ValidatorFn, Validators } from '@angular/forms';
 
-export interface IFieldDef {
-  fieldname: string;
-  fieldlabel: string;
-  fieldtype: string;
+type Value = string | number | Date;
+
+export interface FieldDef {
+  defaultValue?: Value;
+  fieldLabel: string;
+  fieldName: string;
+  fieldType: string;
   mandatory?: boolean;
-  minimumLength?: number;
-  maximumLength?: number;
   matchesPattern?: string;
-  defaultValue?: any;
+  maximumLength?: number;
+  minimumLength?: number;
 }
 
 export class SchemaFormUtils {
   // Given a schema, return an array of control configurations suitable
   // for use with the FormBuilder group() method.
 
-  static createControlsConfigFromSchema(
-    schema: IFieldDef[]
-  ): Record<string, any> {
-    const allControlConfigs: any = {};
+  static createControlsConfigFromSchema(schema: FieldDef[]) {
+    const allControlConfigs: Record<
+      string,
+      [Value] | [Value, ValidatorFn[]]
+    > = {};
 
-    schema.forEach((fieldinfo: any) => {
-      const singleControlConfig: any[] = [];
+    schema.forEach(fieldinfo => {
       const singleControlValidators: ValidatorFn[] = [];
 
-      singleControlConfig[0] = fieldinfo.defaultValue || '';
+      const defaultValue = fieldinfo.defaultValue || '';
 
       if (fieldinfo.mandatory) {
         singleControlValidators.push(Validators.required);
@@ -51,11 +53,14 @@ export class SchemaFormUtils {
       // If any validators were added, attach them to
       // the control configuration.
       //
+      let singleControlConfig: [Value] | [Value, ValidatorFn[]];
       if (singleControlValidators.length > 0) {
-        singleControlConfig[1] = singleControlValidators;
+        singleControlConfig = [defaultValue, singleControlValidators];
+      } else {
+        singleControlConfig = [defaultValue];
       }
 
-      allControlConfigs[fieldinfo.fieldname] = singleControlConfig;
+      allControlConfigs[fieldinfo.fieldName] = singleControlConfig;
     });
 
     return allControlConfigs;

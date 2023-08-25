@@ -1,47 +1,47 @@
-import { IFieldDef } from './schema-form-utils';
+import { FieldDef } from './schema-form-utils';
 
-export const exampleSchema: IFieldDef[] = [
+export const exampleSchema: FieldDef[] = [
   {
-    fieldname: 'firstName',
-    fieldlabel: 'First Name',
-    fieldtype: 'text',
+    fieldName: 'firstName',
+    fieldLabel: 'First Name',
+    fieldType: 'text',
     mandatory: true
   },
 
   {
-    fieldname: 'lastName',
-    fieldlabel: 'Last Name',
-    fieldtype: 'text',
+    fieldName: 'lastName',
+    fieldLabel: 'Last Name',
+    fieldType: 'text',
     mandatory: true
   },
 
   {
-    fieldname: 'dob',
-    fieldlabel: 'Birthdate',
-    fieldtype: 'date'
+    fieldName: 'dob',
+    fieldLabel: 'Birthdate',
+    fieldType: 'date'
   },
 
   {
-    fieldname: 'zip',
-    fieldlabel: 'Postal Code',
-    fieldtype: 'text',
+    fieldName: 'zip',
+    fieldLabel: 'Postal Code',
+    fieldType: 'text',
     mandatory: true,
     matchesPattern: '\\d{5}'
   },
 
   {
-    fieldname: 'password',
-    fieldlabel: 'Password',
-    fieldtype: 'password',
+    fieldName: 'password',
+    fieldLabel: 'Password',
+    fieldType: 'password',
     mandatory: true,
     minimumLength: 3,
     maximumLength: 10
   },
 
   {
-    fieldname: 'notes',
-    fieldlabel: 'Notes',
-    fieldtype: 'text',
+    fieldName: 'notes',
+    fieldLabel: 'Notes',
+    fieldType: 'text',
     defaultValue: ''
   }
 ];

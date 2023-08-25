@@ -14,7 +14,7 @@ import { SchemaFormUtils } from './schema-form-utils';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  dynamicFormGroup: FormGroup<any>;
+  dynamicFormGroup: FormGroup;
   schema = exampleSchema; // could load from an external source
   controls: Record<string, AbstractControl>;
 
