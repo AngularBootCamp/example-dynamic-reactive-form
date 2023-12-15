@@ -13,7 +13,7 @@ import { SchemaFormUtils } from './schema-form-utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
   standalone: true,
   imports: [ReactiveFormsModule, NgFor, NgIf, JsonPipe]
 })
