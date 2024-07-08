@@ -1,4 +1,4 @@
-import { NgFor, NgIf, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   AbstractControl,
@@ -15,7 +15,7 @@ import { SchemaFormUtils } from './schema-form-utils';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf, JsonPipe]
+  imports: [ReactiveFormsModule, JsonPipe]
 })
 export class AppComponent {
   dynamicFormGroup: FormGroup;
